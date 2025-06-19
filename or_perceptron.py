@@ -15,13 +15,12 @@ class Perceptron:
                 output = self.predict(xi)
                 self.weights += lr * (target - output) * x_aug
 
-# Данные для OR
 X = np.array([[0,0],[0,1],[1,0],[1,1]])
 y = np.array([0, 1, 1, 1])
 
 model = Perceptron()
 model.train(X, y)
 
-print("=== OR ===")
+print("Проверка всех возможных комбинаций: ")
 for x in X:
     print(f"{x} -> {model.predict(x)}")
